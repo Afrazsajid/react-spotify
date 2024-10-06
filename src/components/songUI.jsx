@@ -44,7 +44,11 @@ const SongPlayer = ({ song }) => {
     setCurrentTime(seekTime);
   };
 
+  
+
   return (
+    <>
+    
     <div className="song-player">
       <div className="album-cover">
         <img src={song.albumCover} alt="Album Cover" />
@@ -70,6 +74,7 @@ const SongPlayer = ({ song }) => {
       />
       <LikeButton liked={liked} setLiked={setLiked} />
     </div>
+    </>
   );
 };
 
