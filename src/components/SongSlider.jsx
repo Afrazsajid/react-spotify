@@ -19,7 +19,7 @@ const SongSlider = ({ currentTime, duration, handleSeek }) => {
       <input
         type="range"
         min="0"
-        max="100"
+        max={"100"}
         value={(currentTime / duration) * 100}
         onChange={handleChange}
       />

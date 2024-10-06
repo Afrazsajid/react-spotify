@@ -4,11 +4,24 @@ import SongControls from "./SongControls";
 import SongSlider from "./SongSlider";
 import LikeButton from "./LikeButton";
 
+function audodue(duration="0:0"){
+  return duration
+}
+
+
+
 const SongPlayer = ({ song }) => {
+
+  const handleMeta = () => {
+    setduration(audioRef.current.duration);
+    console.log("h")
+  };
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [liked, setLiked] = useState(false);
   const audioRef = useRef(null);
+
+  let [durationn,setduration] =useState(8)
 
   // Toggle play/pause
   const handlePlayPause = () => {
@@ -45,13 +58,14 @@ const SongPlayer = ({ song }) => {
         ref={audioRef}
         src={song.url}
         onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleMeta}
       ></audio>
 
-      {/* Modularized components */}
+
       <SongControls isPlaying={isPlaying} handlePlayPause={handlePlayPause} />
       <SongSlider
         currentTime={currentTime}
-        duration={song.duration}
+        duration={durationn}
         handleSeek={handleSeek}
       />
       <LikeButton liked={liked} setLiked={setLiked} />
