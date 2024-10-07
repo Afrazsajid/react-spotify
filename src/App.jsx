@@ -47,9 +47,9 @@ function App() {
 
   const onsearch = async (q) => {
     setsong({
-      title: "Shayad",
-      artist: "Arijit Singh",
-      albumCover: "https://c.saavncdn.com/172/Shayad-Film-Version-From-Love-Aaj-Kal--Hindi-2021-20210325204139-500x500.jpg",
+      title: `Searching..(${q})`,
+      artist: "Loading..",
+      albumCover: "https://res.cloudinary.com/dsfm7zxhg/image/upload/v1728325817/Spinner_1x-1.0s-200px-200px_nvfw0q.gif",
       url: "https://pagalfree.com/musics/128-Pehle Bhi Main - Animal 128 Kbps.mp3",
     })
     const songDetails = await fetchSongDetails(q);
